@@ -2,7 +2,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@import '../../includes/lib';
+@use '../../includes/lib';
+@use "images";
 
 @mixin details {
     .is-summary {
@@ -27,10 +28,10 @@
 
 @mixin summary {
     position: relative;
-    @include bidi(((padding-right, $layout-md, padding-left, 0),));
+    @include bidi(((padding-right, lib.$layout-md, padding-left, 0),));
 
     &:before {
-        background: $url-image-expand-black top left no-repeat;
+        background: images.$url-image-expand-black top left no-repeat;
         @include background-size(20px, 20px);
         @include bidi(((right, 8px, left, auto),));
         @include transition(transform 100ms ease-in-out);

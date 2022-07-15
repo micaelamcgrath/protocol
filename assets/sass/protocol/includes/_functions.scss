@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 @use 'sass:math';
+@use "themes";
 
 
 // Convert pixel units to rems, assuming a 16px base size
@@ -63,21 +64,21 @@
 
 @function type-scale($scale) {
   // Default to Firefox brand scale
-  $scale-map: $theme-type-scale-firefox;
+  $scale-map: themes.$theme-type-scale-firefox;
 
   // Firefox condensed
   @if $type-scale == 'condensed' {
-    $scale-map: $theme-type-scale-condensed-firefox;
+    $scale-map: themes.$theme-type-scale-condensed-firefox;
   }
 
   // Switch to Mozilla brand scale
   @if $brand-theme == 'mozilla' {
-    $scale-map: $theme-type-scale-mozilla;
+    $scale-map: themes.$theme-type-scale-mozilla;
   }
 
   // Mozilla condensed
   @if $brand-theme == 'mozilla' and $type-scale == 'condensed' {
-    $scale-map: $theme-type-scale-condensed-mozilla;
+    $scale-map: themes.$theme-type-scale-condensed-mozilla;
   }
 
   @if not map-has-key($scale-map, $scale) {
@@ -95,11 +96,11 @@
 
 @function get-theme($var) {
   // Default to Firefox theme
-  $theme-map: $theme-firefox;
+  $theme-map: themes.$theme-firefox;
 
   // Switch to Mozilla theme
   @if $brand-theme == 'mozilla' {
-    $theme-map: $theme-mozilla;
+    $theme-map: themes.$theme-mozilla;
   }
 
   @if not map-has-key($theme-map, $var) {

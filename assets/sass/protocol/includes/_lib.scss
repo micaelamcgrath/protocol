@@ -44,7 +44,4 @@ $type-scale: 'standard' !default;
 
 
 // Import all the things!
-@import './node_modules/@mozilla-protocol/tokens/dist/index.scss';
-@import 'functions';
-@import 'themes';
-@import 'mixins';
+@forward '@mozilla-protocol/tokens/dist/index';

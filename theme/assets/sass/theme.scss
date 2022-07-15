@@ -5,8 +5,9 @@
 $brand-theme: 'mozilla';
 $font-path:  '/protocol/fonts';
 
-@import '../../../node_modules/@mozilla-protocol/tokens/dist/index';
-@import '../../../assets/sass/protocol/includes/lib';
+@forward '../../../assets/sass/protocol/includes/lib';
+@forward '../../../assets/sass/protocol/includes/mixins';
+@forward '../../../assets/sass/protocol/includes/functions';
 
 @import '../../../assets/sass/protocol/includes/fonts/inter';
 @import '../../../assets/sass/protocol/includes/fonts/metropolis';

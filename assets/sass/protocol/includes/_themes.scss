@@ -2,6 +2,9 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+@use 'functions';
+@use "lib";
+
 // This file contains all the theme variables for both the Firefox and Mozilla
 // themes. Mixins and functions can draw from these variable maps, swapping to
 // a different map based on the value of the global $brand-theme variable.
@@ -11,23 +14,23 @@
 
 $theme-spacing: (
     // xs
-    v-grid-xs: $layout-md,
-    h-grid-xs: $layout-xs,
+    v-grid-xs: lib.$layout-md,
+    h-grid-xs: lib.$layout-xs,
 
     // sm is the same as xs
-    v-grid-sm: $layout-md,
-    h-grid-sm: $layout-xs,
+    v-grid-sm: lib.$layout-md,
+    h-grid-sm: lib.$layout-xs,
 
     // md
-    v-grid-md: $layout-md,
-    h-grid-md: $layout-lg,
+    v-grid-md: lib.$layout-md,
+    h-grid-md: lib.$layout-lg,
 
     // lg is the same as md
-    v-grid-lg: $layout-md,
-    h-grid-lg: $layout-lg,
+    v-grid-lg: lib.$layout-md,
+    h-grid-lg: lib.$layout-lg,
 
     // xl
-    v-grid-xl: $layout-xl,
+    v-grid-xl: lib.$layout-xl,
     h-grid-xl: 80px,
 );
 
@@ -36,15 +39,15 @@ $theme-spacing: (
 // Fonts
 
 $theme-fonts-firefox: (
-    body-font-family: $font-stack-base,
-    button-font-family: $font-stack-firefox,
-    title-font-family: $font-stack-firefox,
+    body-font-family: lib.$font-stack-base,
+    button-font-family: lib.$font-stack-firefox,
+    title-font-family: lib.$font-stack-firefox,
 );
 
 $theme-fonts-mozilla: (
-    body-font-family: $font-stack-base,
-    button-font-family: $font-stack-base,
-    title-font-family: $font-stack-mozilla,
+    body-font-family: lib.$font-stack-base,
+    button-font-family: lib.$font-stack-base,
+    title-font-family: lib.$font-stack-mozilla,
 );
 
 
@@ -52,49 +55,49 @@ $theme-fonts-mozilla: (
 // Colors
 
 $theme-colors-firefox: (
-    background-color-tertiary-inverse: $color-ink-20,
-    background-color-tertiary: $color-marketing-gray-20,
-    background-color-secondary-inverse: $color-ink-50,
-    background-color-secondary: $color-light-gray-10,
-    background-color-inverse: $color-ink-80,
-    background-color: $color-white,
-    body-text-color-secondary-inverse: $color-marketing-gray-30,
-    body-text-color-secondary: $color-marketing-gray-70,
-    body-text-color-inverse: $color-white,
-    body-text-color: $color-marketing-gray-80,
-    link-color-hover-inverse: $color-blue-05,
-    link-color-hover: $color-link-hover,
-    link-color-inverse: $color-blue-10,
-    link-color-visited-hover-inverse: $color-violet-05,
-    link-color-visited-hover: $color-link-hover,
-    link-color-visited-inverse: $color-violet-10,
-    link-color-visited: $color-link-visited,
-    link-color: $color-link,
-    title-text-color-inverse: $color-white,
-    title-text-color: $color-marketing-gray-99,
+    background-color-tertiary-inverse: lib.$color-ink-20,
+    background-color-tertiary: lib.$color-marketing-gray-20,
+    background-color-secondary-inverse: lib.$color-ink-50,
+    background-color-secondary: lib.$color-light-gray-10,
+    background-color-inverse: lib.$color-ink-80,
+    background-color: lib.$color-white,
+    body-text-color-secondary-inverse: lib.$color-marketing-gray-30,
+    body-text-color-secondary: lib.$color-marketing-gray-70,
+    body-text-color-inverse: lib.$color-white,
+    body-text-color: lib.$color-marketing-gray-80,
+    link-color-hover-inverse: lib.$color-blue-05,
+    link-color-hover: lib.$color-link-hover,
+    link-color-inverse: lib.$color-blue-10,
+    link-color-visited-hover-inverse: lib.$color-violet-05,
+    link-color-visited-hover: lib.$color-link-hover,
+    link-color-visited-inverse: lib.$color-violet-10,
+    link-color-visited: lib.$color-link-visited,
+    link-color: lib.$color-link,
+    title-text-color-inverse: lib.$color-white,
+    title-text-color: lib.$color-marketing-gray-99,
 );
 
 $theme-colors-mozilla: (
-    background-color-tertiary-inverse: $color-dark-gray-40,
-    background-color-tertiary: $color-light-gray-30,
-    background-color-secondary-inverse: $color-dark-gray-60,
-    background-color-secondary: $color-light-gray-10,
-    background-color-inverse: $color-black,
-    background-color: $color-white,
-    body-text-color-secondary-inverse: $color-light-gray-30,
-    body-text-color-secondary: $color-dark-gray-90,
-    body-text-color-inverse: $color-white,
-    body-text-color: $color-black,
-    link-color-hover-inverse: $color-blue-05,
-    link-color-hover: $color-link-hover,
-    link-color-inverse: $color-blue-10,
-    link-color-visited-hover-inverse: $color-violet-05,
-    link-color-visited-hover: $color-link-hover,
-    link-color-visited-inverse: $color-violet-10,
-    link-color-visited: $color-link-visited,
-    link-color: $color-link,
-    title-text-color-inverse: $color-white,
-    title-text-color: $color-black,
+    background-color-tertiary-inverse: lib.$color-dark-gray-40,
+    background-color-tertiary: lib.$color-light-gray-30,
+    background-color-secondary-inverse: lib.$color-dark-gray-60,
+    background-color-secondary: lib.$color-light-gray-10,
+    background-color-inverse: lib.$color-black,
+    background-color: lib.$color-white,
+    body-text-color-secondary-inverse: lib.$color-light-gray-30,
+    body-text-color-secondary: lib.$color-dark-gray-90,
+    body-text-color-inverse: lib.$color-white,
+    body-text-color: lib.$color-black,
+    link-color-hover-inverse: lib.$color-blue-05,
+    link-color-hover: lib.$color-link-hover,
+    link-color-inverse: lib.$color-blue-10,
+    link-color-visited-hover-inverse: lib.$color-violet-05,
+    link-color-visited-hover: lib.$color-link-hover,
+    link-color-visited-inverse: lib.$color-violet-10,
+    link-color-visited: lib.$color-link-visited,
+    link-color: lib.$color-link,
+    title-text-color-inverse: lib.$color-white,
+    title-text-color: lib.$color-black,
 );
 
 
@@ -223,5 +226,5 @@ $theme-type-scale-condensed-mozilla: (
 // Usage:
 //    map-get($theme-firefox, 'background-color-secondary');
 
-$theme-firefox: map-collect($theme-spacing, $theme-fonts-firefox, $theme-colors-firefox, $theme-type-scale-firefox);
-$theme-mozilla: map-collect($theme-spacing, $theme-fonts-mozilla, $theme-colors-mozilla, $theme-type-scale-mozilla);
+$theme-firefox: functions.map-collect($theme-spacing, $theme-fonts-firefox, $theme-colors-firefox, $theme-type-scale-firefox);
+$theme-mozilla: functions.map-collect($theme-spacing, $theme-fonts-mozilla, $theme-colors-mozilla, $theme-type-scale-mozilla);
