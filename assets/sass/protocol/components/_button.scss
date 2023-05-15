@@ -7,21 +7,23 @@
 
 @mixin default-states {
     &:focus {
-        border-color: $button-border-color-focus;
+        background-color: transparent;
+        border-color: $color-black;
         outline: $field-focus-ring-outline;
         outline-offset: 1px;
+        color: $color-black;
     }
 
     &:hover {
-        background-color: $color-marketing-gray-20;
+        background-color: transparent;
         border-color: $color-black;
         box-shadow: none;
         color: $color-black;
     }
 
     &:active {
-        background-color: $color-marketing-gray-20;
-        border-color: $color-marketing-gray-70;
+        background-color: transparent;
+        border-color: $color-black;
         color: $color-black;
     }
 }
@@ -100,7 +102,7 @@ a.mzp-c-button {
     }
 
     &:disabled {
-        opacity: 0.6;
+        opacity: 0.8;
         pointer-events: none;
     }
 }
@@ -161,6 +163,10 @@ a.mzp-c-button {
         background-color: transparent;
         border-color: $color-black;
         color: $color-black;
+
+        &:active {
+            background-color: $color-black;
+        }
 
         @include default-states;
 
