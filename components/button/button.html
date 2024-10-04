@@ -1,40 +1,25 @@
 {# @button
-#
-# parameters:
-# class         - string
-# label         - string
-# link          - URL
-# type          - type attribute value (button, submit, reset)
-# disabled      - Boolean
-# iconStart     - markup
-# iconEnd       - markup
-#}
-{%- if link -%}
-<a class="mzp-c-button{% if class %} {{ class }}{% endif %}" href="{{ link }}">
-  {%- if iconStart %}
-    <span class="mzp-c-button-icon-start">
-      {{ iconStart | safe }}
-    </span>
-  {% endif -%}
-  {{ label }}
-  {%- if iconEnd %}
-    <span class="mzp-c-button-icon-end">
-      {{ iconEnd | safe }}
-    </span>
-  {% endif -%}
-</a>
-{%- else -%}
-<button class="mzp-c-button{% if class %} {{ class }}{% endif %}" type="{% if type %}{{ type }}{% else %}button{% endif %}"{{ " disabled" if disabled }}>
-  {%- if iconStart %}
-    <span class="mzp-c-button-icon-start">
-      {{ iconStart | safe }}
-    </span>
-  {% endif -%}
-  {{ label }}
-  {%- if iconEnd %}
-    <span class="mzp-c-button-icon-end">
-      {{ iconEnd | safe }}
-    </span>
-  {% endif -%}
-</button>
-{%- endif -%}
+  #
+  # parameters:
+  # class         - string
+  # label         - string
+  # link          - URL
+  # type          - type attribute value (button, submit, reset)
+  # disabled      - Boolean
+  # iconStart     - markup
+  # iconEnd       - markup
+  #}
+  {%- if link -%}
+  <a class="mzp-c-button{% if class %} {{ class }}{% endif %}" href="{{ link }}" role="button" aria-label="{{ label }}">
+    {%- if iconStart %}<span class="mzp-c-button-icon-start">{{ iconStart | safe }}</span>{% endif -%}
+    {{ label }}
+    {%- if iconEnd %}<span class="mzp-c-button-icon-end">{{ iconEnd | safe }}</span>{% endif -%}
+  </a>
+  {%- else -%}
+  <button class="mzp-c-button{% if class %} {{ class }}{% endif %}" type="{% if type %}{{ type }}{% else %}button{% endif %}"{{ " disabled" if disabled }} aria-label="{{ label }}">
+    {%- if iconStart %}<span class="mzp-c-button-icon-start">{{ iconStart | safe }}</span>{% endif -%}
+    {{ label }}
+    {%- if iconEnd %}<span class="mzp-c-button-icon-end">{{ iconEnd | safe }}</span>{% endif -%}
+  </button>
+  {%- endif -%}
+  
